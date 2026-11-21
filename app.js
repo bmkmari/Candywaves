@@ -32,7 +32,7 @@ bluetoothBtn.addEventListener('click', async () => {
     if (error.name === 'NotFoundError') connectionStatus.textContent = 'Nenhum dispositivo foi selecionado.';
     else connectionStatus.textContent = `Não foi possível iniciar a seleção Bluetooth: ${error.message}`;
   }
-});
+}); 
 
 const colorPicker = document.getElementById('colorPicker');
 const previewLight = document.getElementById('previewLight');
