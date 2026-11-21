@@ -45,7 +45,7 @@ connectionStatus.textContent =
 
 
     
-    connectionStatus.textContent = `Dispositivo encontrado: ${device.name || 'nome não informado'}. Ainda falta implementar e validar o protocolo da ${selectedDeviceName}.`;
+    connectionStatus.textContent = `Dispositivo. encontrado: ${device.name || 'nome não informado'}. Ainda falta implementar e validar o protocolo da ${selectedDeviceName}.`;
     compatNotice.textContent = 'O navegador permitiu selecionar um dispositivo BLE. Isso não confirma que ele seja a lightstick selecionada nem que o site consiga controlá-la. Nenhum comando de iluminação foi enviado.';
   } catch (error) {
     if (error.name === 'NotFoundError') connectionStatus.textContent = 'Nenhum dispositivo foi selecionado.';
