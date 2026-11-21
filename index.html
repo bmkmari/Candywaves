@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6c5e2">
+  <title>Candyverse — Your lights, your universe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Candyverse início">🍬 CANDYVERSE</a>
+    <span class="top-note">YOUR LIGHTS, YOUR UNIVERSE</span>
+    <button class="menu" id="menuBtn" aria-label="Abrir menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">TWICE • BTS • ONCE • ARMY</p>
+        <h1>Make your<br><span>own lightshow.</span></h1>
+        <p class="intro">Um espaço para personalizar suas lightsticks e criar experiências cheias de cor.</p>
+        <a class="primary-link" href="#devices">COMEÇAR <span>↓</span></a>
+      </div>
+      <div class="hero-art" aria-label="Ilustração decorativa de lightsticks">
+        <div class="orb orb-one"></div><div class="orb orb-two"></div>
+        <div class="spark s1">✦</div><div class="spark s2">✧</div><div class="spark s3">✦</div>
+        <div class="stick candy"><div class="candy-head">∞</div><div class="handle"></div></div>
+        <div class="stick army"><div class="army-head">✦</div><div class="handle"></div></div>
+        <span class="art-caption">LIGHT UP YOUR UNIVERSE</span>
+      </div>
+    </section>
+
+    <section class="section" id="devices">
+      <div class="section-heading">
+        <div><p class="eyebrow">01 / MY COLLECTION</p><h2>My lightsticks</h2></div>
+        <span class="section-sub">Escolha um dispositivo</span>
+      </div>
+      <div class="device-grid">
+        <article class="device-card candy-card">
+          <div class="device-emoji">🍭</div>
+          <div><p class="device-group">TWICE</p><h3>Candy Bong ∞</h3><p class="device-version">Ver. 3</p></div>
+          <button class="outline-btn connect-btn" data-device="Candy Bong ∞ (Ver. 3)">Selecionar</button>
+        </article>
+        <article class="device-card army-card">
+          <div class="device-emoji">💜</div>
+          <div><p class="device-group">BTS</p><h3>ARMY Bomb</h3><p class="device-version">Ver. 4</p></div>
+          <button class="outline-btn connect-btn" data-device="ARMY Bomb Ver. 4">Selecionar</button>
+        </article>
+        <article class="device-card army-card">
+          <div class="device-emoji">✨</div>
+          <div><p class="device-group">BTS</p><h3>ARMY Bomb</h3><p class="device-version">Special Edition</p></div>
+          <button class="outline-btn connect-btn" data-device="ARMY Bomb Special Edition">Selecionar</button>
+        </article>
+      </div>
+      <div class="bluetooth-panel">
+        <div class="bt-icon">ᛒ</div>
+        <div class="bt-copy">
+          <strong id="selectedName">Nenhuma lightstick selecionada</strong>
+          <span id="connectionStatus">Selecione um modelo para começar.</span>
+        </div>
+        <button class="primary-btn" id="bluetoothBtn">Procurar Bluetooth</button>
+      </div>
+      <p class="notice" id="compatNotice">Protótipo: a seleção de dispositivos funciona, mas os protocolos específicos de cada lightstick ainda precisam ser implementados e testados. O navegador pode encontrar dispositivos BLE próximos, mas isso não significa que já consiga controlar as luzes.</p>
+    </section>
+
+    <section class="section studio" id="studio">
+      <div class="section-heading">
+        <div><p class="eyebrow">02 / LIGHTSHOW STUDIO</p><h2>Choose your colors</h2></div>
+        <span class="section-sub">Prévia visual</span>
+      </div>
+      <div class="studio-grid">
+        <div class="preview-card">
+          <div class="preview-light" id="previewLight"><span>✦</span></div>
+          <p>LIGHT PREVIEW</p>
+          <strong id="colorName">Candy pink</strong>
+        </div>
+        <div class="controls-card">
+          <label for="colorPicker">Sua cor</label>
+          <div class="color-row"><input type="color" id="colorPicker" value="#f58ac7"><span id="hexValue">#F58AC7</span></div>
+          <div class="preset-row" aria-label="Cores predefinidas">
+            <button class="swatch" data-color="#f58ac7" style="--swatch:#f58ac7" aria-label="Rosa"></button>
+            <button class="swatch" data-color="#b69aff" style="--swatch:#b69aff" aria-label="Lilás"></button>
+            <button class="swatch" data-color="#8edcf5" style="--swatch:#8edcf5" aria-label="Azul"></button>
+            <button class="swatch" data-color="#fff2a6" style="--swatch:#fff2a6" aria-label="Amarelo"></button>
+            <button class="swatch" data-color="#ffffff" style="--swatch:#ffffff" aria-label="Branco"></button>
+          </div>
+          <label for="brightness">Brilho da prévia <span id="brightnessValue">80%</span></label>
+          <input type="range" id="brightness" min="10" max="100" value="80">
+          <button class="primary-btn wide" id="savePreset">Salvar cor favorita</button>
+          <p class="small-note" id="saveMessage">As alterações nesta versão são apenas uma prévia na tela.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section playlist" id="music">
+      <div class="section-heading">
+        <div><p class="eyebrow">03 / MUSIC CORNER</p><h2>Pick a vibe</h2></div>
+        <span class="section-sub">Sua seleção musical</span>
+      </div>
+      <div class="music-grid">
+        <button class="music-card" data-song="Feel Special"><span class="album-art art-pink">✦</span><span><b>Feel Special</b><small>TWICE</small></span><span class="play">▶</span></button>
+        <button class="music-card" data-song="The Feels"><span class="album-art art-blue">♡</span><span><b>The Feels</b><small>TWICE</small></span><span class="play">▶</span></button>
+        <button class="music-card" data-song="Dynamite"><span class="album-art art-purple">✧</span><span><b>Dynamite</b><small>BTS</small></span><span class="play">▶</span></button>
+      </div>
+      <p class="notice" id="songStatus">Escolha uma música para marcar sua seleção. Esta demonstração não reproduz áudio nem sincroniza luzes com o MV.</p>
+    </section>
+  </main>
+
+  <footer><span class="brand">🍬 CANDYVERSE</span><span>Fan-made project • Não oficial</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
