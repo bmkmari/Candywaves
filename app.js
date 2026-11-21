@@ -25,31 +25,14 @@ bluetoothBtn.addEventListener('click', async () => {
   }
   try {
     connectionStatus.textContent = 'Abrindo seletor Bluetooth…';
-
-    const device = await navigator.bluetooth.requestDevice({
-    acceptAllDevices: true
-    });
-
-    connectionStatus.textContent = 'Conectando via Bluetooth GATT...';
-
-    const server = await device.gatt.connect();
-
-    connectionStatus.textContent = server.connected
-      ? GATT conectado: ${device.name || 'Dispositivo sem nome'}
-        : 'Não foi possível estabelecer conexão GATT.';
-
-
-
-    
-
-    
+    const device = await navigator.bluetooth.requestDevice({acceptAllDevices: true});
     connectionStatus.textContent = `Dispositivo encontrado: ${device.name || 'nome não informado'}. Ainda falta implementar e validar o protocolo da ${selectedDeviceName}.`;
     compatNotice.textContent = 'O navegador permitiu selecionar um dispositivo BLE. Isso não confirma que ele seja a lightstick selecionada nem que o site consiga controlá-la. Nenhum comando de iluminação foi enviado.';
   } catch (error) {
     if (error.name === 'NotFoundError') connectionStatus.textContent = 'Nenhum dispositivo foi selecionado.';
     else connectionStatus.textContent = `Não foi possível iniciar a seleção Bluetooth: ${error.message}`;
   }
-}); 
+});
 
 const colorPicker = document.getElementById('colorPicker');
 const previewLight = document.getElementById('previewLight');
