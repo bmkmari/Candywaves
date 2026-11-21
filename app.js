@@ -53,7 +53,7 @@ connectionStatus.textContent =
       'GATT conectado, mas nenhum serviço autorizado foi encontrado.';
   } else {
     connectionStatus.textContent =
-      'GATT conectado! ${services.length} serviço(s) acessível(is).;
+      'GATT conectado! ${services.length} serviço(s) acessível(is).';
 
   for (const service of services) {
     console.log('UUID do serviço:', service.uuid);
