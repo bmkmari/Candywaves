@@ -44,9 +44,35 @@ connectionStatus.textContent =
     : 'Não foi possível estabelecer conexão bmk GATT.';
 
 
+  const services = await server.getPrimaryServices();
+
+  console.log('Serviços Bluetooth encontrados:', services);
+
+  if (services.length === 0) {
+    connectionStatus.textContent =
+      'GATT conectado, mas nenhum serviço autorizado foi encontrado.';
+  } else {
+    connectionStatus.textContent =
+      'GATT conectado! ${services.length} serviço(s) acessível(is).;
+
+  for (const service of services) {
+    console.log('UUID do serviço:', service.uuid);
+  }
+}
+
+
+
+
+
+
+
+    
+
+
+    
     
     // connectionStatus.textContent = `Dispositivo. encontrado: ${device.name || 'nome não informado'}. Ainda falta implementar e validar o protocolo da ${selectedDeviceName}.`;
-    compatNotice.textContent = 'O navegador permitiu selecionar um dispositivo BLE. Isso não confirma que ele seja a lightstick selecionada nem que o site consiga controlá-la. Nenhum comando de iluminação foi enviado.';
+    //compatNotice.textContent = 'O navegador permitiu selecionar um dispositivo BLE. Isso não confirma que ele seja a lightstick selecionada nem que o site consiga controlá-la. Nenhum comando de iluminação foi enviado.';
   } catch (error) {
     if (error.name === 'NotFoundError') connectionStatus.textContent = 'Nenhum dispositivo foi selecionado.';
     else connectionStatus.textContent = `Não foi possível iniciar a seleção Bluetooth: ${error.message}`;
